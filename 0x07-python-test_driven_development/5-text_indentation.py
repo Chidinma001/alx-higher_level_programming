@@ -1,35 +1,30 @@
 #!/usr/bin/python3
-""" text_indentation returns "text" in the specified format:
-2 newlines after each ['.', '?', ':']
-"""
+"""The text-indentation moudule docstring."""
 
 
 def text_indentation(text):
-    """ prints "text" with 2 newlines after each of these char: ['.', '?', ':']
-    checks if "text" is a str
-    first loop removes spaces after each required chars
-    second loop adds 2 newlines after each required chars
+    """Inside the function.
+    
+    Args:
+        text (str): str
+    Raise:
+        TypeError
     """
-    if type(text) != str:
+    if not isinstance(text, str):
         raise TypeError("text must be a string")
-    toCatAfter = ['.', '?', ':']
 
-    # Removes the space after special chars
     idx = 0
-    for items in text:
-        if items in toCatAfter:
-            if text[idx + 1] == " ":
-                text = text[:idx + 1] + text[idx + 2:]
-        else:
-            idx += 1
+    while idx < len(text) and text[idx] == " ":
+        idx += 1
 
-    # Cats '\n\n' after the special char with removed space
-    idx = 0
-    for items in text:
-        if items in toCatAfter:
-            text = text[:idx + 1] + '\n\n' + text[idx + 1:]
-            idx += 3
-        else:
-            idx += 1
+    while idx < len(text):
+        print(text[idx], end="")
+        if text[idx] == "\n" or text[idx] in ".?:":
+            if text[idx] in ".?:":
+                print("\n")
 
-    print(text, end='')
+            idx += 1
+            while idx < len(text) and text[idx] == ' ':
+                idx += 1
+            continue
+        idx += 1

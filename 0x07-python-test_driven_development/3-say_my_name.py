@@ -1,22 +1,18 @@
 #!/usr/bin/python3
-'''
-module for saying names
+"""The say_my_name module docstring."""
 
-'''
+
 def say_my_name(first_name, last_name=""):
-    '''
-    
-    :param first_name: the first name
-    :param last_name: the last name
-    :return: returns the full name  comprising of first and last name
-     Raises:
-        TypeError: If first_name or last_name is not a string
-    
-    '''
-
+    """Inside the function.
+   
+   Args:
+        first_name (str): str
+        last_name (str): str
+    Raises:
+        TypeErrors
+    """
     if not isinstance(first_name, str):
-        raise TypeError('first_name must be a string')
-    elif not isinstance(last_name,str):
+        raise TypeError("first_name must be a string")
+    if not isinstance(last_name, str):
         raise TypeError("last_name must be a string")
-
-    print(f"My name is {first_name} {last_name}")
+    print("My name is {} {}".format(first_name, last_name))

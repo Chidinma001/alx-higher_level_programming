@@ -8,7 +8,7 @@ Usage
 ----
 
     >>> import sys
-    >>> sys.path.append('./')
+    >>> sys.path.append('../')
     >>> add_integer = __import__('0-add_integer').add_integer
     >>> add_integer(1, 2)
     3

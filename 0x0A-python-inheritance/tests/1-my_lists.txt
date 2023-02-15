@@ -1,0 +1,75 @@
+==============
+1-my_list.py
+==============
+
+This module tests the ``MyList`` class.
+
+Usage
+-----
+
+    >>> import sys
+    >>> sys.path.append('../')
+    >>> MyList = __import__('1-my_list').MyList
+
+    >>> my_list = MyList()
+    >>> print(my_list)
+    []
+
+    >>> print(type(my_list))
+    <class '1-my_list.MyList'>
+
+    >>> my_list = MyList([1, 2, 3])
+    >>> print(my_list)
+    [1, 2, 3]
+
+    >>> my_list = MyList([1, 2, 4], [1, 2, 3])
+    Traceback (most recent call last):
+       ...
+    TypeError: list expected at most 1 argument, got 2
+
+    >>> my_list = MyList("string")
+    >>> print(my_list)
+    ['s', 't', 'r', 'i', 'n', 'g']
+
+    >>> my_list = MyList(2)
+    Traceback (most recent call last):
+       ...
+    TypeError: 'int' object is not iterable
+
+    >>> my_list = MyList(None)
+    Traceback (most recent call last):
+       ...
+    TypeError: 'NoneType' object is not iterable
+
+
+    >>> my_list = MyList([1, 2])
+    >>> print(my_list.__add__([3, 4]))
+    [1, 2, 3, 4]
+
+    >>> print(my_list.__contains__(1))
+    True
+
+    >>> print(my_list.__len__())
+    2
+
+    >>> print(my_list.__rmul__(2))
+    [1, 2, 1, 2]
+
+    >>> print(my_list[::-1])
+    [2, 1]
+
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]

@@ -9,6 +9,7 @@ Base = declarative_base()
 
 class State(Base):
     """The State class.
+    
     Attributes:
         id (int): state id.
         name (str): state name.
